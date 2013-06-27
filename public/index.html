@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="stylesheets/first.css">
+			<script src="first.js"></script>
+			<script src="jquery/jquery-2.0.2.js"></script>
+			<script src="jquery/jquery.form.js"></script>
+			<script src="jquery/firstJQ.js"></script>
+		</head>
+		<body>
+			<div class="mainwrapper">
+				<div class="toptoolbar">
+					<img src="images/pinterest.png" alt="Pinterest" width="120" height="40">
+				</div>
+				<div class = "messagemaincontainer">
+					<div id = "messagecontainer"></div>
+					<div id = "messagecontrols">
+						<button class = "leftbutton"><</button>
+						<button class = "rightbutton">></button>
+					</div>
+				</div>
+				<div id="allform">
+					<br/>
+					<br/>
+					<h1 id="titlelabel">Account Settings</h1>
+					<form id='theform'>
+						<div class="formpanel" id="formpart1">
+							<p id='bilabel'>Basic Info</p>
+							<hr class='formhr'>
+							<p class="formlabels">Email Address</p>
+							<input id="emailtb" type="text" name="email">
+							<hr class='formhr'>
+							<p class="formlabels">Password</p>
+							<a href='' id="passchangeanchor">Change your password...</a>
+							<hr class='formhr'>
+							<p class="formlabels">Language</p>
+							<select class= 'formcb' name='language'>
+							  <option value="ger">Deutsch</option>
+							  <option value="en-uk">English(UK)</option>
+							  <option value="en-us">English(US)</option>
+							  <option value="esp-am">Espanol(America)</option>
+							  <option value="esp-es">Espanol(Espana)</option>
+							  <option value="fr">Francais</option>
+							  <option value="ned">Nederlands</option>
+							  <option value="por-bra">Portugues(Brasil)</option>
+							  <option value="por-eu">Portugues(Europeu)</option>
+							</select>
+							<hr class='formhr'>
+							<p class="formlabels">Country</p>
+							<select class= 'formcb' name='country'>
+							  <option value="arm">Armenia</option>
+							  <option value="man">China</option>
+							  <option value="fr">France</option>
+							  <option value="ger">Germany</option>
+							  <option value="jap">Japan</option>
+							  <option value="lb">Lebanon</option>
+							  <option value="en-us">USA</option>
+							</select>
+							<hr class='formhr'>
+							<p class="formlabels">Gender</p>
+							<input style="margin-left: 183px" checked="checked" type="radio" name="sex" value="male">
+							<p class="formrblabels">Male</p>
+							<input class="formrb" type="radio" name="sex" value="female">
+							<p class="formrblabels">Female</p>
+							<input class="formrb" type="radio" name="sex" value="unspecified">
+							<p class="formrblabels">Unspecified</p>
+							<hr class='formhr'>
+							<p class="formlabels">Search Privacy</p>
+							<div class="yesnobutton" id="yesno1" onclick='change()'>
+								<div class="yesbutton">
+								  <p>Yes</p>
+								</div>
+								<div class="nobutton">
+								  <p>No</p>
+								</div>
+								<div class="sliderblock" id="sb"></div>
+							</div>
+							<p class='captionlabel' id='spcaptionlabel'>Keep search engines (ex: Google) from showing<span> <br/></span> your Pinterest profile in search results</p>
+							<hr class='formhr'>
+							<p class="formlabels">Search history</p>
+							<button class='formbutton' id='shbutton'>Clear Recent Searches</button>
+							<p class='captionlabel' id='shcaptionlabel'>Remove things you've recently searched for from<span> <br/></span>search suggestions</p>
+							<hr class='formhr'>
+							<p class="formlabels">Recent contacts</p>
+							<button class='formbutton' id='rcbutton'>Clear Recent Searches</button>
+							<p class='captionlabel' id='rccaptionlabel'>Remove people you've sent pins to from recent<span> <br/></span>contact suggestions</p>
+						</div>
+						<input class='formbutton' id='submitbutton' type="submit" value="Save Settings">
+					</form>
+				</div>
+			</div>
+		</body>
+	</html>

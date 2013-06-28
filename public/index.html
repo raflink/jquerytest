@@ -13,26 +13,26 @@
 					<img src="images/pinterest.png" alt="Pinterest" width="120" height="40">
 				</div>
 				<div class = "messagemaincontainer">
-					<div id = "messagecontainer"></div>
-					<div id = "messagecontrols">
-						<button class = "leftbutton"><</button>
-						<button class = "rightbutton">></button>
+					<div class = "messagecontainer"></div>
+					<div class = "messagecontrols">
+						<button class = "pagebutton leftbutton"><</button>
+						<button class = "pagebutton rightbutton">></button>
 					</div>
 				</div>
-				<div id="allform">
+				<div class="allform">
 					<br/>
-					<h1 id="titlelabel">Account Settings</h1>
-					<form id='theform'>
+					<h1>Account Settings</h1>
+					<form id='theform'> <!-- I didn't set the "method" and "action" attributes, because I'm using a jQuery library to submit the form asynchronously -->
 						<div class="formpanel" id="formpart1">
-							<p id='bilabel'>Basic Info</p>
+							<p class='pagelabel bilabel'>Basic Info</p>
 							<hr class='formhr'>
-							<p class="formlabels">Email Address</p>
-							<input id="emailtb" type="text" name="email">
+							<p class="pagelabel">Email Address</p>
+							<input class="emailtb" type="text" name="email">
 							<hr class='formhr'>
-							<p class="formlabels">Password</p>
-							<a href='' id="passchangeanchor">Change your password...</a>
+							<p class="pagelabel">Password</p>
+							<a href='' class="passchangeanchor">Change your password...</a>
 							<hr class='formhr'>
-							<p class="formlabels">Language</p>
+							<p class="pagelabel">Language</p>
 							<select class= 'formcb' name='language'>
 							  <option value="ger">Deutsch</option>
 							  <option value="en-uk">English(UK)</option>
@@ -45,7 +45,7 @@
 							  <option value="por-eu">Portugues(Europeu)</option>
 							</select>
 							<hr class='formhr'>
-							<p class="formlabels">Country</p>
+							<p class="pagelabel">Country</p>
 							<select class= 'formcb' name='country'>
 							  <option value="arm">Armenia</option>
 							  <option value="man">China</option>
@@ -56,15 +56,15 @@
 							  <option value="en-us">USA</option>
 							</select>
 							<hr class='formhr'>
-							<p class="formlabels">Gender</p>
+							<p class="pagelabel">Gender</p>
 							<input style="margin-left: 183px" checked="checked" type="radio" name="sex" value="male">
-							<p class="formrblabels">Male</p>
+							<p class="pagelabel formrblabels">Male</p>
 							<input class="formrb" type="radio" name="sex" value="female">
-							<p class="formrblabels">Female</p>
+							<p class="pagelabel formrblabels">Female</p>
 							<input class="formrb" type="radio" name="sex" value="unspecified">
-							<p class="formrblabels">Unspecified</p>
+							<p class="pagelabel formrblabels">Unspecified</p>
 							<hr class='formhr'>
-							<p class="formlabels">Search Privacy</p>
+							<p class="pagelabel">Search Privacy</p>
 							<div class="yesnobutton" id="yesno1" onclick='change()'>
 								<div class="yesbutton">
 								  <p>Yes</p>
@@ -74,17 +74,17 @@
 								</div>
 								<div class="sliderblock" id="sb"></div>
 							</div>
-							<p class='captionlabel' id='spcaptionlabel'>Keep search engines (ex: Google) from showing<span> <br/></span> your Pinterest profile in search results</p>
+							<p class='pagelabel captionlabel spcaptionlabel'>Keep search engines (ex: Google) from showing<span> <br/></span> your Pinterest profile in search results</p>
 							<hr class='formhr'>
-							<p class="formlabels">Search history</p>
-							<button class='formbutton' id='shbutton'>Clear Recent Searches</button>
-							<p class='captionlabel' id='shcaptionlabel'>Remove things you've recently searched for from<span> <br/></span>search suggestions</p>
+							<p class="pagelabel">Search history</p>
+							<button class='pagebutton shbutton'>Clear Recent Searches</button>
+							<p class='pagelabel captionlabel shcaptionlabel'>Remove things you've recently searched for from<span> <br/></span>search suggestions</p>
 							<hr class='formhr'>
-							<p class="formlabels">Recent contacts</p>
-							<button class='formbutton' id='rcbutton'>Clear Recent Searches</button>
-							<p class='captionlabel' id='rccaptionlabel'>Remove people you've sent pins to from recent<span> <br/></span>contact suggestions</p>
+							<p class="pagelabel">Recent contacts</p>
+							<button class='pagebutton rcbutton'>Clear Recent Contacts</button>
+							<p class='pagelabel captionlabel rccaptionlabel'>Remove people you've sent pins to from recent<span> <br/></span>contact suggestions</p>
 						</div>
-						<input class='formbutton' id='submitbutton' type="submit" value="Save Settings">
+						<input class='pagebutton submitbutton' type="submit" value="Save Settings">
 					</form>
 				</div>
 			</div>

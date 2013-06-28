@@ -13,28 +13,26 @@ $(document).ready(function(){
 	}
 	checkCookie();
 	$("#theform").ajaxForm({url: '/form/redirection', type: 'post', success: function(res){
-		$(".messagebox").show(function(){
-			$(".messagetext").text(res);
 			window.scrollTo(0, 0);
-		});
+			console.log(res);
 	}});
 	$(".leftbutton").mousedown(function(){
 		if(messagefocus < numofmessages){
-			contPosition = $(this).parent().parent().children("#messagecontainer").css('left');
+			contPosition = $(this).parent().parent().children(".messagecontainer").css('left');
 			contPosition = contPosition.substring(0, contPosition.indexOf("px"));
 			contPosition = parseInt(contPosition);
 			contPosition = (contPosition - 852) + 'px';
-			$(this).parent().parent().children("#messagecontainer").css('left', contPosition);
+			$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
 			messagefocus++;
 		}
 	});
 	$(".rightbutton").mousedown(function(){
 		if(messagefocus > 1){
-			contPosition = $(this).parent().parent().children("#messagecontainer").css('left');
+			contPosition = $(this).parent().parent().children(".messagecontainer").css('left');
 			contPosition = contPosition.substring(0, contPosition.indexOf("px"));
 			contPosition = parseInt(contPosition);
 			contPosition = (contPosition + 852) + 'px';
-			$(this).parent().parent().children("#messagecontainer").css('left', contPosition);
+			$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
 			messagefocus--;
 		}
 	});
@@ -112,14 +110,13 @@ function makeMessages(){
 		d1=document.createElement('div');
 		$(d1).addClass("messagebox")
 			.attr("id", "messagebox" + (i+1))
-			.appendTo($("#messagecontainer"));
-		//$("#titlelabel").before("<div class= 'messagebox' id='messagebox" + (i+1) + "'></div>");
+			.appendTo($(".messagecontainer"));
 		d2=document.createElement('p');
 		$(d2).addClass("messagetext")
 			.html(messages[i])
 			.appendTo($("#messagebox" + (i+1)));
 		d3=document.createElement('button');
-		$(d3).addClass("okbutton")
+		$(d3).addClass("pagebutton okbutton")
 			.attr("id", "okbutton" + (i+1))
 			.html("OK")
 			.appendTo($("#messagebox" + (i+1)))
@@ -127,13 +124,13 @@ function makeMessages(){
 				$(this).parent().hide();
 				numofmessages--;
 				if(numofmessages <= 1)
-					$(this).parent().parent().parent().children("#messagecontrols").hide();
+					$(this).parent().parent().parent().children(".messagecontrols").hide();
 				if(messagefocus > 1){
-					contPosition = $(this).parent().parent().parent().children("#messagecontainer").css('left');
+					contPosition = $(this).parent().parent().parent().children(".messagecontainer").css('left');
 					contPosition = contPosition.substring(0, contPosition.indexOf("px"));
 					contPosition = parseInt(contPosition);
 					contPosition = (contPosition + 852) + 'px';
-					$(this).parent().parent().parent().children("#messagecontainer").css('left', contPosition);
+					$(this).parent().parent().parent().children(".messagecontainer").css('left', contPosition);
 				}
 				messagefocus--;
 			});

@@ -25,6 +25,8 @@ img {
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 2;
+	overflow: hidden;
 }
 .formpanel {
 	width: 57%;
@@ -209,6 +211,7 @@ img {
 	overflow:hidden;
 	position: absolute;
 	margin-top: 50px;
+	z-index: 1;
 }
 #messagecontainer {
 	width: 10000px;
@@ -262,4 +265,11 @@ img {
 	border-radius: 3px;
 	border: 1px solid #A7A7A7;
 	font: -webkit-small-control;
+}
+#allform {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	margin-top: 100px;
+	overflow: hidden;
 }

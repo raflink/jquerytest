@@ -19,7 +19,6 @@ $(document).ready(function(){
 		});
 	}});
 	$(".leftbutton").mousedown(function(){
-		console.log('yey');
 		if(messagefocus < numofmessages){
 			contPosition = $(this).parent().parent().children("#messagecontainer").css('left');
 			contPosition = contPosition.substring(0, contPosition.indexOf("px"));
@@ -30,7 +29,6 @@ $(document).ready(function(){
 		}
 	});
 	$(".rightbutton").mousedown(function(){
-		console.log('right');
 		if(messagefocus > 1){
 			contPosition = $(this).parent().parent().children("#messagecontainer").css('left');
 			contPosition = contPosition.substring(0, contPosition.indexOf("px"));

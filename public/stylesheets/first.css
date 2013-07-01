@@ -79,8 +79,8 @@ img {
 	float: left;
 }
 .rightbutton {
-	float: left;
-	margin-left: 825px;
+	float: right;
+	margin-right: 170px;
 }
 .allform {
 	position: absolute;

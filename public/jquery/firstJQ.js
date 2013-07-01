@@ -11,6 +11,7 @@ $(document).ready(function(){
 		getMessages(0, numofmessages);
 		console.log(messages);
 		makeMessages();
+		adjustControls();
 	}
 	checkCookie();
 	$("#theform").ajaxForm({url: '/form/redirection', type: 'post', success: function(res){
@@ -29,6 +30,7 @@ $(document).ready(function(){
 			});
 			//$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
 			messagefocus++;
+			adjustControls();
 		}
 	});
 	$(".leftbutton").mousedown(function(){
@@ -43,6 +45,7 @@ $(document).ready(function(){
 			});
 			//$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
 			messagefocus--;
+			adjustControls();
 		}
 	});
 });
@@ -130,7 +133,7 @@ function makeMessages(){
 			.html("OK")
 			.appendTo($("#messagebox" + (i+1)))
 			.on('mousedown', function() {
-				$(this).parent().hide();
+				$(this).parent().hide(600);
 				numofmessages--;
 				if(numofmessages <= 1)
 					$(this).parent().parent().parent().children(".messagecontrols").hide();
@@ -141,7 +144,25 @@ function makeMessages(){
 					contPosition = (contPosition + 852) + 'px';
 					$(this).parent().parent().parent().children(".messagecontainer").css('left', contPosition);
 				}
-				messagefocus--;
+				if(messagefocus != 1)
+					messagefocus--;
+				adjustControls();
 			});
 	}
+}
+
+function adjustControls(){
+	if(messagefocus == 1){
+		$(".leftbutton").hide();
+		$(".rightbutton").show();
+	}
+	else
+		if(messagefocus == numofmessages){
+			$(".rightbutton").hide();
+			$(".leftbutton").show();
+		}
+		else{
+			$(".leftbutton").show();
+			$(".rightbutton").show();
+		}
 }

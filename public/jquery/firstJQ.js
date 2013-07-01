@@ -1,6 +1,7 @@
 var numofmessages = '';
 var messages = [];
 var messagefocus = 1;
+var enableAnimation = true;
 $(document).ready(function(){
 	//$(".messagebox").hide();
 	//document.cookie = 'name=Raffi&messages=3&message1=Very important message is very persistent!&message2=I\'m persistent and I\'m here to stay!&message3=I\'m staying forever because I\'m persistent!; expires=expires=Thu, 01 Jan 2014 00:00:01 GMT';
@@ -16,23 +17,31 @@ $(document).ready(function(){
 			window.scrollTo(0, 0);
 			console.log(res);
 	}});
-	$(".leftbutton").mousedown(function(){
-		if(messagefocus < numofmessages){
+	$(".rightbutton").mousedown(function(){
+		if(enableAnimation && messagefocus < numofmessages){
+			enableAnimation = false;
 			contPosition = $(this).parent().parent().children(".messagecontainer").css('left');
 			contPosition = contPosition.substring(0, contPosition.indexOf("px"));
 			contPosition = parseInt(contPosition);
 			contPosition = (contPosition - 852) + 'px';
-			$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
+			$(this).parent().parent().children(".messagecontainer").animate({left:contPosition}, 600, function(){
+				enableAnimation = true;
+			});
+			//$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
 			messagefocus++;
 		}
 	});
-	$(".rightbutton").mousedown(function(){
-		if(messagefocus > 1){
+	$(".leftbutton").mousedown(function(){
+		if(enableAnimation && messagefocus > 1){
+			enableAnimation = false;
 			contPosition = $(this).parent().parent().children(".messagecontainer").css('left');
 			contPosition = contPosition.substring(0, contPosition.indexOf("px"));
 			contPosition = parseInt(contPosition);
 			contPosition = (contPosition + 852) + 'px';
-			$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
+			$(this).parent().parent().children(".messagecontainer").animate({left:contPosition}, 600, function(){
+				enableAnimation = true;
+			});
+			//$(this).parent().parent().children(".messagecontainer").css('left', contPosition);
 			messagefocus--;
 		}
 	});

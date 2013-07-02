@@ -1,0 +1,87 @@
+!!!	5
+html(lang = "en")
+	head
+		title	JqueryTest
+		link(rel='stylesheet', type='text/css', href='/stylesheets/first.css')
+		script(src="first.js")
+		script(src="jquery/jquery-2.0.2.js")
+		script(src="jquery/jquery.form.js")
+		script(src="jquery/firstJQ.js")
+	body
+		.mainwrapper.clearfix
+			.toptoolbar
+				img(src="images/pinterest.png", alt="Pinterest", width="120", height="40")
+			.messagemaincontainer
+				.messagecontainer
+				.messagecontrols
+					button.pagebutton.leftbutton &lt;
+					button.pagebutton.rightbutton &gt;
+			.allform
+				br
+				h1 Account Settings
+				form#theform
+					.formpanel
+						p.pagelabel.bilabel Basic Info
+						hr.formhr
+						p.pagelabel Email Address
+						input.emailtb(type="text", name="email")
+						hr.formhr
+						p.pagelabel Password
+						a.passchangeanchor(href='') Change your password...
+						hr.formhr
+						p.pagelabel Language
+						select.formcb(name='language')
+							option(value="ger")Deutsch
+							option(value="en-uk")English(UK)
+							option(value="en-us")English(US)
+							option(value="esp-am")Espanol(America)
+							option(value="esp-es")Espanol(Espana)
+							option(value="fr")Francais
+							option(value="ned")Nederlands
+							option(value="por-bra")Portugues(Brasil)
+							option(value="por-eu")Portugues(Europeu)
+						hr.formhr
+						p.pagelabel Country
+						select.formcb(name='country')
+							option(value="arm")Armenia
+							option(value="man")China
+							option(value="fr")France
+							option(value="ger")Germany
+							option(value="jap")Japan
+							option(value="lb")Lebanon
+							option(value="en-us")USA
+						hr.formhr
+						p.pagelabel Gender
+						input(style="margin-left: 183px", checked="checked", type="radio", name="sex", value="male")
+						p.pagelabel.formrblabels Male
+						input.formrb(type="radio", name="sex", value="female")
+						p.pagelabel.formrblabels Female
+						input.formrb(type="radio", name="sex", value="unspecified")
+						p.pagelabel.formrblabels Unspecified
+						hr.formhr
+						p.pagelabel Search Privacy
+						.yesnobutton#yesno1(onclick='change()')
+							.yesbutton
+								p Yes
+							.nobutton
+								p No
+							.sliderblock#sb
+						p.pagelabel.captionlabel.spcaptionlabel Keep search engines (ex: Google) from showing
+							span
+								br
+							your Pinterest profile in search results
+						hr.formhr
+						p.pagelabel Search history
+						button.pagebutton.shbutton Clear Recent Searches
+						p.pagelabel.captionlabel.shcaptionlabel Remove things you've recently searched for from
+							span
+								br
+							search suggestions
+						hr.formhr
+						p.pagelabel Recent contacts
+						button.pagebutton.rcbutton Clear Recent Contacts
+						p.pagelabel.captionlabel.rccaptionlabel Remove people you've sent pins to from recent
+							span
+								br
+							contact suggestions
+					input.pagebutton.submitbutton(type="submit", value="Save Settings")
